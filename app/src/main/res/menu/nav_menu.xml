@@ -4,5 +4,7 @@
         <item
             android:id="@+id/assets_gallery"
             android:title="Assets Gallery"/>
+        <item android:id="@+id/draw_geometric_figures"
+            android:title="Draw Geometric Figures"/>
     </group>
 </menu>

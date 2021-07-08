@@ -32,8 +32,8 @@ import java.util.InputMismatchException;
 public class AssetsGalleryFragment extends Fragment {
     private LinearLayout linearLayout;
     private ImageView imageView;
-    private Button btnNext;
-    private Button btnPre;
+    private MaterialButton btnNext;
+    private MaterialButton btnPre;
     String[] images = null;
     AssetManager assets = null;
     InputStream assetFile = null;

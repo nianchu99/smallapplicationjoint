@@ -19,7 +19,14 @@
             android:layout_gravity="center"
             android:text="Hello to Small Application Joint"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            />
+    <SurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
     </FrameLayout>
 <com.google.android.material.navigation.NavigationView
     android:id="@+id/nav_view"
