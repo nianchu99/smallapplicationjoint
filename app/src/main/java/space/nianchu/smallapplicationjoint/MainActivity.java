@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
     private FragmentManager fManager;
     private AssetsGalleryFragment assetsGalleryFragment;
     private DrawGeometricFiguresFragment drawGeometricFiguresFragment = null;
+    private NeonLightsFragment neonLightsFragment = null;
     private SurfaceView surfaceView;
     SurfaceHolder surfaceHolder = null;
     @Override
@@ -149,6 +150,16 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
                             Log.d(TAG, "onNavigationItemSelected: draw Geometric Figures Fragment");
                             mDrawerLayout.closeDrawers();
                             break;
+                        case R.id.neon_lights:
+                            if (neonLightsFragment == null){
+                                neonLightsFragment = new NeonLightsFragment();
+                                fragmentTransaction.add(R.id.frame_layout, neonLightsFragment);
+                            }else {
+                                fragmentTransaction.show(neonLightsFragment);
+                            }
+                            Log.d(TAG, "onNavigationItemSelected: Neon Lights Fragment");
+                            mDrawerLayout.closeDrawers();
+                            break;
                     }
                     fragmentTransaction.commit();
                     return true;
@@ -200,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
     private void hideAllFragment(FragmentTransaction fragmentTransaction){
         if(assetsGalleryFragment != null)fragmentTransaction.hide(assetsGalleryFragment);
         if(drawGeometricFiguresFragment != null)fragmentTransaction.hide(drawGeometricFiguresFragment);
-//        if(fg3 != null)fragmentTransaction.hide(fg3);
+        if(neonLightsFragment != null)fragmentTransaction.hide(neonLightsFragment);
 //        if(fg4 != null)fragmentTransaction.hide(fg4);
     }
 

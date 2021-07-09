@@ -23,7 +23,7 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
 import space.nianchu.smallapplicationjoint.Util.DrawUtil;
-
+// FIXME: 还是有小bug
 public class DrawGeometricFiguresFragment extends Fragment implements SurfaceHolder.Callback, View.OnClickListener{
     private static final int FIGURE_CIRCLE = 0;
     private static final int FIGURE_SQUARE = 1;
@@ -218,7 +218,7 @@ public class DrawGeometricFiguresFragment extends Fragment implements SurfaceHol
                     Log.d(TAG, "recordedGradient: " + recordedGradient);
                     Log.d(TAG, "recordedFigure: " + recordedFigure);
                     Shader mShader = new LinearGradient(0, 0, 40, 60, new int[]{
-                            Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW
+                            Color.GREEN, Color.BLUE
                     }, null, Shader.TileMode.REPEAT);
                     filledPaint.setShader(mShader);
                     drawFigure(canvas, surfaceView, 0, currentFigure, 0, 0, filledPaint);

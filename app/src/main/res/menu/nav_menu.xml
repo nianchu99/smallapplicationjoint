@@ -6,5 +6,7 @@
             android:title="Assets Gallery"/>
         <item android:id="@+id/draw_geometric_figures"
             android:title="Draw Geometric Figures"/>
+        <item android:id="@+id/neon_lights"
+            android:title="Neon Lights"/>
     </group>
 </menu>
