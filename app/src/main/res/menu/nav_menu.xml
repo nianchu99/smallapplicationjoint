@@ -8,5 +8,7 @@
             android:title="Draw Geometric Figures"/>
         <item android:id="@+id/neon_lights"
             android:title="Neon Lights"/>
+        <item android:id="@+id/free_ball"
+        android:title="Free Ball"/>
     </group>
 </menu>

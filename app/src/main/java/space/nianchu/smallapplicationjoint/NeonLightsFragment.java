@@ -54,7 +54,6 @@ public class NeonLightsFragment extends Fragment {
             textViews[i] = view.findViewById(names[i]);
         }
         return view;
-
     }
 
     @Override

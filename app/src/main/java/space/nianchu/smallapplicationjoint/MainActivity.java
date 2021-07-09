@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
     private AssetsGalleryFragment assetsGalleryFragment;
     private DrawGeometricFiguresFragment drawGeometricFiguresFragment = null;
     private NeonLightsFragment neonLightsFragment = null;
+    private FreeBallFragment freeBallFragment = null;
     private SurfaceView surfaceView;
     SurfaceHolder surfaceHolder = null;
     @Override
@@ -160,6 +161,16 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
                             Log.d(TAG, "onNavigationItemSelected: Neon Lights Fragment");
                             mDrawerLayout.closeDrawers();
                             break;
+                        case R.id.free_ball:
+                            if (freeBallFragment == null){
+                                freeBallFragment = new FreeBallFragment();
+                                fragmentTransaction.add(R.id.frame_layout, freeBallFragment);
+                            }else {
+                                fragmentTransaction.show(freeBallFragment);
+                            }
+                            Log.d(TAG, "onNavigationItemSelected:Free Ball Fragment");
+                            mDrawerLayout.closeDrawers();
+                            break;
                     }
                     fragmentTransaction.commit();
                     return true;
@@ -212,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
         if(assetsGalleryFragment != null)fragmentTransaction.hide(assetsGalleryFragment);
         if(drawGeometricFiguresFragment != null)fragmentTransaction.hide(drawGeometricFiguresFragment);
         if(neonLightsFragment != null)fragmentTransaction.hide(neonLightsFragment);
-//        if(fg4 != null)fragmentTransaction.hide(fg4);
+        if(freeBallFragment != null)fragmentTransaction.hide(freeBallFragment);
     }
 
     @Override
