@@ -28,6 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
     private DrawGeometricFiguresFragment drawGeometricFiguresFragment = null;
     private NeonLightsFragment neonLightsFragment = null;
     private FreeBallFragment freeBallFragment = null;
+    private SimpleImageViewDisplayFragment simpleImageViewDisplayFragment = null;
     private SurfaceView surfaceView;
     SurfaceHolder surfaceHolder = null;
     @Override
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
         bindViews();
         requestBingPic();
         setNavigationView();
-        testSurfaceView();
+//        testSurfaceView();
     }
 
     public void bindViews(){
@@ -171,6 +173,16 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
                             Log.d(TAG, "onNavigationItemSelected:Free Ball Fragment");
                             mDrawerLayout.closeDrawers();
                             break;
+                        case R.id.simple_image_view:
+                            if (simpleImageViewDisplayFragment == null){
+                                simpleImageViewDisplayFragment = new SimpleImageViewDisplayFragment();
+                                fragmentTransaction.add(R.id.frame_layout, simpleImageViewDisplayFragment);
+
+                            }else {
+                                fragmentTransaction.show(simpleImageViewDisplayFragment);
+                            }
+                            mDrawerLayout.closeDrawers();
+                            break;
                     }
                     fragmentTransaction.commit();
                     return true;
@@ -206,7 +218,6 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
                                int height) {
         Canvas canvas = holder.lockCanvas();
         canvas.drawColor(Color.WHITE);
-        Test(canvas);
         holder.unlockCanvasAndPost(canvas);
     }
 
@@ -224,6 +235,8 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
         if(drawGeometricFiguresFragment != null)fragmentTransaction.hide(drawGeometricFiguresFragment);
         if(neonLightsFragment != null)fragmentTransaction.hide(neonLightsFragment);
         if(freeBallFragment != null)fragmentTransaction.hide(freeBallFragment);
+        if(simpleImageViewDisplayFragment != null)fragmentTransaction.hide(simpleImageViewDisplayFragment);
+
     }
 
     @Override

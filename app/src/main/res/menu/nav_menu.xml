@@ -10,5 +10,7 @@
             android:title="Neon Lights"/>
         <item android:id="@+id/free_ball"
         android:title="Free Ball"/>
+        <item android:id="@+id/simple_image_view"
+            android:title="Simple Image View(customized)"/>
     </group>
 </menu>
